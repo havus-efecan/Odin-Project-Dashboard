@@ -1,0 +1,63 @@
+body,html{
+    margin: 0;
+}
+.wrapper{
+    height: 100vh;
+    box-sizing: border-box;
+    display: grid;
+    grid-template: 0.7fr 1fr 1fr 1fr/0.22fr 1fr 0.22fr;
+}
+.wrapper > .sidebar{
+    grid-area: 1/1/5/2;
+}
+.header{
+    grid-area: 1/2/2/4;
+}
+.content{
+    grid-area: 2/2/5/4;
+    display: grid;
+    grid-template: repeat(3,1fr)/repeat(2,1fr) 0.70fr;
+    padding: 20px;
+
+}
+.project-container{
+    display: grid;
+    grid-area: 1/1/4/3;
+    grid-template: minmax(15px,30px) repeat(3,1fr)/ repeat(2,0.5fr);
+    gap: 20px;
+    margin-right: 16px;
+}
+.project-container > :first-child{
+    grid-area: 1/1/1/3;
+  
+}
+.project{
+   
+    border-radius: 2px;
+    
+}
+.content > .sidebar2{
+     grid-area: 1/3/4/4; 
+  
+
+}
+.sidebar2{
+    display: grid;
+    grid-template: 0.10fr 1fr 0.10fr 1fr/1fr;
+    row-gap: 20px;
+    
+}
+
+.announcements{
+
+}
+.trending{
+
+}
+
+
+div{
+    border: solid red;
+    border-width: 1px;
+    
+}
