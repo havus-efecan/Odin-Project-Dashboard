@@ -1,41 +1,163 @@
 body,html{
     margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+
 .wrapper{
     height: 100vh;
     box-sizing: border-box;
     display: grid;
-    grid-template: 0.7fr 1fr 1fr 1fr/0.22fr 1fr 0.22fr;
+    grid-template: 0.6fr 1fr 1fr 1fr/0.22fr 1fr 0.07fr;
 }
-.wrapper > .sidebar{
+
+
+
+.sidebar{
     grid-area: 1/1/5/2;
+    display: grid;
+    grid-template: 0.25fr 1fr 2fr /1fr;
+    background-color: #abdff5;
+    padding-left: 12px;
 }
+
+.sidebar > div > div{
+    display: flex;
+   
+}
+.sidebar >:nth-child(3){
+    margin-top: 10%;
+}
+.dashboard-image{
+    width: 19%;
+}
+img{
+    width: 9%;
+    margin-right: 8px;
+    margin-left: 4px;
+}
+
+
+
+
 .header{
     grid-area: 1/2/2/4;
+    max-height: 200px;
+
+    
 }
+.search-icon{
+    width: 4%;
+}
+.header >:nth-child(1){
+    height: 40%;
+    display: grid;
+    grid-template: 1fr/ 1fr 0.6fr;
+    
+}
+.header >:nth-child(1) >:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+.header >:nth-child(2){
+    height: 60%;
+    display: grid;
+    grid-template: 1fr/ 1fr 0.6fr;
+}
+.header > div >div{
+    padding-left: 12px;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+}
+.profile-pic{
+    height: 100%;
+
+}
+.profile-pic ~ div > h1{
+    font-size: 28px;
+    line-height: 8px;
+}
+
+input{
+    width: 75%;
+    height: 20px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: #e0f2fe;
+
+}
+.new-upload-share.new-upload-share{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    
+}
+.new-upload-share > button{
+    width: 20%;
+    height: 40%;
+    border-radius: 16px;
+    border: none;
+    background-color: #38bdf8;
+    color: white;
+    font-size: 16px;
+}
+.notification-icon{
+    height: 50%;
+}
+
+
 .content{
     grid-area: 2/2/5/4;
     display: grid;
     grid-template: repeat(3,1fr)/repeat(2,1fr) 0.70fr;
     padding: 20px;
+    background-color: #e0f2fe;
+    
 
 }
 .project-container{
     display: grid;
     grid-area: 1/1/4/3;
     grid-template: minmax(15px,30px) repeat(3,1fr)/ repeat(2,0.5fr);
-    gap: 20px;
     margin-right: 16px;
+    row-gap: 18px;
+    column-gap: 18px;
+
 }
 .project-container > :first-child{
     grid-area: 1/1/1/3;
+
   
 }
 .project{
-   
-    border-radius: 2px;
-    
+    display: grid;
+    grid-template: 0.1fr 1fr 0.5fr /1fr;
+    border-radius: 12px;
+    padding-left: 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: white;
+    box-shadow: 5px 5px 11px 2px rgba(0,0,0,0.14);
+    border-left: solid rgb(238, 176, 83) 8px;
+
+
 }
+
+.project h3{
+    margin: 0;
+}
+.project p{
+    margin-top: 8px;
+}
+
+.project div{
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
 .content > .sidebar2{
      grid-area: 1/3/4/4; 
   
@@ -44,20 +166,81 @@ body,html{
 .sidebar2{
     display: grid;
     grid-template: 0.10fr 1fr 0.10fr 1fr/1fr;
-    row-gap: 20px;
+    row-gap: 10px;
     
 }
 
 .announcements{
+    display: grid;
+    overflow: hidden;
+    padding: 16px;
+    background-color: white;
+    grid-template: 1fr 1fr 1fr/ 1fr;
+    box-shadow: 5px 5px 11px 2px rgba(0,0,0,0.14);
+    border-radius: 12px;
+    margin-top: 8px;
+
 
 }
+.announcements p,.trending p{
+    font-size: 12px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+
+
+}
+.announcements > div
+{
+    padding: 2px;
+    overflow: hidden;
+
+
+}
+.announcements >div > h3
+{
+    font-size: 16px;
+    margin:0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.announcements >:nth-child(-n+2){
+    border-bottom: 1px solid rgb(206, 204, 204);
+}
+
 .trending{
+    padding: 16px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr/1fr;
+    background-color: white;
+    box-shadow: 5px 5px 11px 2px rgba(0,0,0,0.14);
+    border-radius: 12px;
 
 }
+.trending > div{
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    
+}
 
+.trending > div > img{
+    width: 18%;
+}
+.subheader{
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
 
+.trending-user{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.trending-user > p{
+    font-size: 16px;
+}
 div{
-    border: solid red;
     border-width: 1px;
     
 }
